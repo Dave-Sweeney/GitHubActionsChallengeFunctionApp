@@ -53,7 +53,7 @@ jobs:
     - name: Swap staging slot into production
       id: slot_swap
       run: |
-        az webapp deployment slot swap -g ${{ secrets.AZURE_RG }} -n ${{ env.AZURE_FUNCTIONAPP_NAME }} -s staging url=$(az webapp show -g {{ secrets.AZURE_RG }} -n ${{ env.AZURE_FUNCTIONAPP_NAME }} --query "defaultHostName" -o tsv)
+        az webapp deployment slot swap --resource-group ${{ secrets.AZURE_RG }} --name ${{ env.AZURE_FUNCTIONAPP_NAME }} --slot test --target-slot production
         echo "::set-output name=url::http://$url"
         
     - name: az cli logout

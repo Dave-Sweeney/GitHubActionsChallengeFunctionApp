@@ -10,7 +10,6 @@ using Newtonsoft.Json;
 
 namespace GitHubActionsChallengeFunctionApp
 {
-    // Another useless comment
     public static class Function2
     {
         [FunctionName("Function2")]

@@ -7,7 +7,7 @@ jobs:
       runs-on: ubuntu-latest
       environment:
         name: PRE-PROD
-        url: ${{ steps.deploywebapp.outputs.webapp-url }}
+        
       steps:
         # Checkout code
       - uses: actions/checkout@main

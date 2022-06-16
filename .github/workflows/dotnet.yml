@@ -54,7 +54,7 @@ jobs:
       id: slot_swap
       run: |
         az webapp deployment slot swap --resource-group ${{ secrets.AZURE_RG }} --name ${{ env.AZURE_FUNCTIONAPP_NAME }} --slot test --target-slot production
-        echo "::set-output name=url::http://$url"
+        echo "::set-output name=url::https://$url"
         
     - name: az cli logout
       run: az logout
